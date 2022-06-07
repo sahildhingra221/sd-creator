@@ -544,6 +544,25 @@ function App() {
       console.log(styleSheet)
     }
 
+    // Flex Direction
+
+    const handleFlexDirection = (e) =>{
+      document.getElementById(element).style.flexDirection = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].flexDirection = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, flexDirection: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
     const handleAlignItems = (e) =>{
       document.getElementById(element).style.alignItems = e.target.value;
       let checkExist = styleSheet.find(k => k.id === element);
@@ -590,6 +609,74 @@ function App() {
       }
       else{
         let newStyleSheet = {'id': element, position: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
+    const handleTop = (e) =>{
+      document.getElementById(element).style.top = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].top = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, top: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
+    const handleBottom = (e) =>{
+      document.getElementById(element).style.bottom = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].bottom = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, bottom: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
+    const handleLeft = (e) =>{
+      document.getElementById(element).style.left = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].left = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, left: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
+    const handleRight = (e) =>{
+      document.getElementById(element).style.right = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].right = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, right: e.target.value}
         styleSheet.push(newStyleSheet)
       }
       console.log(styleSheet)
@@ -793,6 +880,38 @@ function App() {
       console.log(styleSheet)
     }
 
+    const handleShadow = (e) =>{
+
+      let shadowVal;
+
+      if(e.target.value == "noShadow"){
+        shadowVal = "none"
+      }
+      else if(e.target.value == "smallShadow"){
+        shadowVal = "0 .125rem .25rem rgba(0,0,0,.075)"
+      }
+      else if(e.target.value == "regularShadow"){
+        shadowVal = "0 .5rem 1rem rgba(0,0,0,.15)"
+      }
+      else if(e.target.value == "largeShadow"){
+        shadowVal = "0 1rem 3rem rgba(0,0,0,.175)"
+      }
+      document.getElementById(element).style.boxShadow = shadowVal;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].boxShadow = shadowVal;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, boxShadow: shadowVal}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
     const handleBackgroundImage = (e) =>{
       document.getElementById(element).style.backgroundImage = "url('"+e.target.value+"')";
       let checkExist = styleSheet.find(k => k.id === element);
@@ -805,6 +924,40 @@ function App() {
       }
       else{
         let newStyleSheet = {'id': element, backgroundImage: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
+    const handleBackgroundPosition = (e) =>{
+      document.getElementById(element).style.backgroundPosition = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].backgroundPosition = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, backgroundPosition: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
+    const handleBackgroundSize = (e) =>{
+      document.getElementById(element).style.backgroundSize = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].backgroundSize = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, backgroundSize: e.target.value}
         styleSheet.push(newStyleSheet)
       }
       console.log(styleSheet)
@@ -1030,6 +1183,15 @@ function App() {
               <option value="inline-block">Inline Block</option>
             </select>
 
+            <label>Flex Direction</label><br/>
+            <select id="elementFlexDirection" onChange={handleFlexDirection}>
+              <option value="none" selected disabled hidden>Flex Direction</option>
+              <option value="column">column</option>
+              <option value="row">row</option>
+              <option value="row-reverse">row reverse</option>
+              <option value="column-reverse">column reverse</option>
+            </select>
+
             <label>Align Item</label><br/>
             <select id="elementAlignItems" onChange={handleAlignItems}>
               <option value="none" selected disabled hidden>Display</option>
@@ -1064,6 +1226,32 @@ function App() {
               <option value="static">Static</option>
             </select>
 
+            <label>Inside margin</label><br/>
+            <input id="elementTop" type="text" onChange={handleTop} placeholder="T"/>
+            <input id="elementBottom" type="text" onChange={handleBottom} placeholder="B"/>
+            <input id="elementLeft" type="text" onChange={handleLeft} placeholder="L"/>
+            <input id="elementRight" type="text" onChange={handleRight} placeholder="R"/>
+
+            <label>Background Image</label><br/>
+            <input id="elementBackgroundImage" type="text" onChange={handleBackgroundImage} placeholder="Image BG"/>
+
+            <label>Background Position</label><br/>
+            <select id="elementBackgroundPosition" onChange={handleBackgroundPosition}>
+              <option value="none" selected disabled hidden>Background Position</option>
+              <option value="center">center</option>
+              <option value="left">left</option>
+              <option value="right">right</option>
+              <option value="top">top</option>
+              <option value="bottom">bottom</option>
+            </select>
+
+            <label>Background Size</label><br/>
+            <select id="elementBackgroundPosition" onChange={handleBackgroundSize}>
+              <option value="none" selected disabled hidden>Background Size</option>
+              <option value="cover">cover</option>
+              <option value="contain">contain</option>
+            </select>
+
             <label>Background</label><br/>
             <input id="elementBackgroundColor" type="color" onChange={handleBackgroundColor}/>
 
@@ -1083,9 +1271,16 @@ function App() {
             <input id="elementMarginBottom" type="text" onChange={handleMarginBottom} placeholder="B"/>
             <input id="elementMarginLeft" type="text" onChange={handleMarginLeft} placeholder="L"/>
             <input id="elementMarginRight" type="text" onChange={handleMarginRight} placeholder="R"/>
-            <label>Background Image</label><br/>
-            <input id="elementBackgroundImage" type="text" onChange={handleBackgroundImage} placeholder="Image BG"/>
             
+            <label>Shadow</label><br/>
+            <select id="elementShadow" onChange={handleShadow}>
+              <option value="none" selected disabled hidden>Shadow</option>
+              <option value="noShadow">no shadow</option>
+              <option value="smallShadow">small</option>
+              <option value="regularShadow">regular</option>
+              <option value="largeShadow">large</option>
+            </select>
+
             <label>Border</label><br/><br/>
 
             <label>Border Radius</label><br/>
