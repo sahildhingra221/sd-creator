@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sd-creator/static/css/main.9b6770ef.css",
-    "main.js": "/sd-creator/static/js/main.f38712a9.js",
+    "main.css": "/sd-creator/static/css/main.dcba22cd.css",
+    "main.js": "/sd-creator/static/js/main.824bdf43.js",
     "static/js/787.5c59d1d1.chunk.js": "/sd-creator/static/js/787.5c59d1d1.chunk.js",
     "index.html": "/sd-creator/index.html",
-    "main.9b6770ef.css.map": "/sd-creator/static/css/main.9b6770ef.css.map",
-    "main.f38712a9.js.map": "/sd-creator/static/js/main.f38712a9.js.map",
+    "main.dcba22cd.css.map": "/sd-creator/static/css/main.dcba22cd.css.map",
+    "main.824bdf43.js.map": "/sd-creator/static/js/main.824bdf43.js.map",
     "787.5c59d1d1.chunk.js.map": "/sd-creator/static/js/787.5c59d1d1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b6770ef.css",
-    "static/js/main.f38712a9.js"
+    "static/css/main.dcba22cd.css",
+    "static/js/main.824bdf43.js"
   ]
 }
