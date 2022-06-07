@@ -257,22 +257,62 @@ function App() {
       styleSheet.find((k, i) => {
         if (k.id === element) {
           try{
-            document.getElementById('elementText').value = styleSheet[i].text;
-            document.getElementById('elementClasses').value = styleSheet[i].class;
-            document.getElementById('elementWidth').value = styleSheet[i].width;
-            document.getElementById('elementHeight').value = styleSheet[i].height;
+
+            if(styleSheet[i].classes !== undefined) {
+              document.getElementById('elementClasses').value = styleSheet[i].class;
+            } else {
+              document.getElementById('elementClasses').value = ''
+            }
+
+            if(styleSheet[i].text !== undefined) {
+              document.getElementById('elementText').value = styleSheet[i].text;
+            } else{
+              document.getElementById('elementText').value = ''
+            }            
+
+            if(styleSheet[i].width !== undefined) {
+              document.getElementById('elementWidth').value = styleSheet[i].width;
+            }else{
+              document.getElementById('elementWidth').value = ''
+            }
+
+            if(styleSheet[i].height !== undefined) {
+              document.getElementById('elementHeight').value = styleSheet[i].height;
+            } else {
+              document.getElementById('elementHeight').value = ''
+            }
+            
             if(styleSheet[i].paddingTop !== undefined) {
               document.getElementById('elementPaddingTop').value = 'styleSheet[i].paddingTop'
             } else{
               document.getElementById('elementPaddingTop').value = ''
             }
+
             if(styleSheet[i].paddingBottom !== undefined) {
               document.getElementById('elementPaddingBottom').value = styleSheet[i].paddingBottom;
             } else{
               document.getElementById('elementPaddingBottom').value = ''
             }
-            document.getElementById('elementPaddingLeft').value = styleSheet[i].paddingLeft;
-            document.getElementById('elementPaddingRight').value = styleSheet[i].paddingRight;
+
+            if(styleSheet[i].paddingLeft !== undefined) {
+              document.getElementById('elementPaddingLeft').value = styleSheet[i].paddingLeft;
+            } else {
+              document.getElementById('elementPaddingLeft').value = ''
+            }
+            
+            if(styleSheet[i].paddingRight !== undefined) {
+              document.getElementById('elementPaddingRight').value = styleSheet[i].paddingRight;
+            } else{
+              document.getElementById('elementPaddingRight').value = ''
+            }
+
+            if(styleSheet[i].display !== undefined) {
+              document.getElementById('elementDisplay').value = styleSheet[i].display;
+            } else {
+              document.getElementById('elementDisplay').value = ''
+            }
+            
+            
           } catch {}
         }
       });

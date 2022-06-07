@@ -1,3 +1,23 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius:10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 
 #Page{
   width:79%;
@@ -10,7 +30,12 @@
 .element-styles{
   background-color:#f7f7f7;
   display:none;
-  padding:20px;
+  padding:10px;
+  display: block;
+  height: 90%;
+  overflow-x: auto;
+  position: fixed;
+  right: 0;
 }
 
 .active{
@@ -55,4 +80,8 @@
   color: #fff;
   padding: 0px 7px;
   border-radius: 10px 0 0 10px;
+}
+
+.element-styles textarea{
+  width:100%;
 }
