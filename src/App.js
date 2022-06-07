@@ -16,6 +16,17 @@ function App() {
     codeData = document.getElementById('Page').innerHTML;
     codeData = codeData.replaceAll("<", "&lt;");
     codeData = codeData.replaceAll(">", "&gt;");
+
+    // Remove tab index
+    codeData = codeData.replaceAll('tabindex="-1"', "");
+
+    // style sheet    
+    // let styleData = codeData.split('style="').pop().split('"')[0];
+    // console.log(styleData)
+
+    // Remove style attribute
+    // codeData = codeData.replaceAll(/style=".*"/, '')
+
     document.getElementById('displayCode').innerHTML = codeData;
   }
 
@@ -929,6 +940,23 @@ function App() {
       console.log(styleSheet)
     }
 
+    const handleImageSrc = (e) =>{
+      document.getElementById(element).src = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].imageSrc = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, imageSrc: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
+
     const handleBackgroundPosition = (e) =>{
       document.getElementById(element).style.backgroundPosition = e.target.value;
       let checkExist = styleSheet.find(k => k.id === element);
@@ -963,6 +991,22 @@ function App() {
       console.log(styleSheet)
     }
 
+    const handleObjectFit = (e) =>{
+      document.getElementById(element).style.objectFit = e.target.value;
+      let checkExist = styleSheet.find(k => k.id === element);
+      if(checkExist){
+        styleSheet.find((k, i) => {
+          if (k.id === element) {
+              styleSheet[i].objectFit = e.target.value;
+          }
+        });
+      }
+      else{
+        let newStyleSheet = {'id': element, objectFit: e.target.value}
+        styleSheet.push(newStyleSheet)
+      }
+      console.log(styleSheet)
+    }
     const handleBorderRadius = (e) =>{
       document.getElementById(element).style.borderRadius = e.target.value;
       let checkExist = styleSheet.find(k => k.id === element);
@@ -1232,6 +1276,16 @@ function App() {
             <input id="elementLeft" type="text" onChange={handleLeft} placeholder="L"/>
             <input id="elementRight" type="text" onChange={handleRight} placeholder="R"/>
 
+            <label>Image Src</label><br/>
+            <input id="elementImageSrc" type="text" onChange={handleImageSrc} placeholder="Image SRC"/>
+
+            <label>Object Fit</label><br/>
+            <select id="elementBackgroundPosition" onChange={handleObjectFit}>
+              <option value="none" selected disabled hidden>Object Fit</option>
+              <option value="cover">cover</option>
+              <option value="contain">contain</option>
+            </select>
+            
             <label>Background Image</label><br/>
             <input id="elementBackgroundImage" type="text" onChange={handleBackgroundImage} placeholder="Image BG"/>
 
