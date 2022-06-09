@@ -1260,8 +1260,8 @@ function App() {
   return (
     <>
       <div className="container-fluid p-0 top-bar">
-        <button onClick={showCode}>View</button>
-        <button onClick={showCss}>View</button>
+        {/* <button onClick={showCode}>View</button>
+        <button onClick={showCss}>View</button> */}
         <button onClick={grabCode}>Grab Code</button>
       </div>
       <div id="displayCodeSection" className="display-code-section">
