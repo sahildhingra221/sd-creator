@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sd-creator/static/css/main.9ede4f44.css",
+    "main.css": "/sd-creator/static/css/main.fcf8574e.css",
     "main.js": "/sd-creator/static/js/main.6a96439d.js",
     "static/js/787.5c59d1d1.chunk.js": "/sd-creator/static/js/787.5c59d1d1.chunk.js",
     "index.html": "/sd-creator/index.html",
-    "main.9ede4f44.css.map": "/sd-creator/static/css/main.9ede4f44.css.map",
+    "main.fcf8574e.css.map": "/sd-creator/static/css/main.fcf8574e.css.map",
     "main.6a96439d.js.map": "/sd-creator/static/js/main.6a96439d.js.map",
     "787.5c59d1d1.chunk.js.map": "/sd-creator/static/js/787.5c59d1d1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ede4f44.css",
+    "static/css/main.fcf8574e.css",
     "static/js/main.6a96439d.js"
   ]
 }
