@@ -21,6 +21,7 @@
 
 #Page{
   width:79%;
+  margin-top:20px
 }
 
 .element-options, .elements-container, .element-styles{
@@ -45,6 +46,8 @@
 .elements-container{
   height:100vh;
   padding: 0 20px 0 10px;
+  background: #fff9f9;
+  padding-top: 20px;
 }
 
 .elements-container button{

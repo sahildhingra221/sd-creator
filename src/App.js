@@ -125,7 +125,7 @@ function App() {
     for (var i=0;i<styleSheet.length;i++) {
         css += "." + styleSheet[i].class + " {";
         for (var key in styleSheet[i]) {
-            if(key!="id" && key!="class"){
+            if(key!="id" && key!="class" && key!="text"){
                 css += key +": "+ styleSheet[i][key]+";"
             }
         }
@@ -154,11 +154,15 @@ function App() {
 
     if(element===''){
       //let pageData = document.getElementById('Page').innerHTML;
-      document.getElementById('Page').innerHTML += `<div class="container" id=${uniqueId} tabIndex="-1"></div>`
+      document.getElementById('Page').innerHTML += `<div class="container ${uniqueId}" id=${uniqueId} tabIndex="-1"></div>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
     else{
-      document.getElementById(element).innerHTML += `<div class="container" id=${uniqueId} tabIndex="-1"></div>`
+      document.getElementById(element).innerHTML += `<div class="container ${uniqueId}" id=${uniqueId} tabIndex="-1"></div>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
 
@@ -170,11 +174,15 @@ function App() {
 
     if(element===''){
       //let pageData = document.getElementById('Page').innerHTML;
-      document.getElementById('Page').innerHTML += `<div id=${uniqueId} tabIndex="-1"></div>`
+      document.getElementById('Page').innerHTML += `<div id=${uniqueId} class=${uniqueId} tabIndex="-1"></div>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
     else{
-      document.getElementById(element).innerHTML += `<div id=${uniqueId} tabIndex="-1"></div>`
+      document.getElementById(element).innerHTML += `<div id=${uniqueId} class=${uniqueId} tabIndex="-1"></div>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
 
@@ -183,10 +191,14 @@ function App() {
   // BUTTON
   const addButton = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<button id=${uniqueId} tabIndex="-1">Button</button>`
+      document.getElementById('Page').innerHTML += `<button id=${uniqueId} class=${uniqueId} tabIndex="-1">Button</button>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<button id=${uniqueId} tabIndex="-1">Button</button>`
+      document.getElementById(element).innerHTML += `<button id=${uniqueId} class=${uniqueId} tabIndex="-1">Button</button>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -194,10 +206,14 @@ function App() {
   // Anchor
   const addAnchor = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<a href="#" id=${uniqueId} tabIndex="-1">link to</a>`
+      document.getElementById('Page').innerHTML += `<a href="#" id=${uniqueId} class=${uniqueId} tabIndex="-1">link to</a>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<a href="#" id=${uniqueId} tabIndex="-1">link to</a>`
+      document.getElementById(element).innerHTML += `<a href="#" id=${uniqueId} class=${uniqueId} tabIndex="-1">link to</a>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -205,10 +221,14 @@ function App() {
   // Hyper Link | Anchor Tag | a
   const addAnchorTag = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<a href="#" id=${uniqueId} tabIndex="-1">link</a>`
+      document.getElementById('Page').innerHTML += `<a href="#" id=${uniqueId} class=${uniqueId} tabIndex="-1">link</a>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<a href="#" id=${uniqueId} tabIndex="-1">link</a>`
+      document.getElementById(element).innerHTML += `<a href="#" id=${uniqueId} class=${uniqueId} tabIndex="-1">link</a>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -216,10 +236,14 @@ function App() {
   // Image
   const addImg = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<img id=${uniqueId} src="/" tabIndex="-1">`
+      document.getElementById('Page').innerHTML += `<img id=${uniqueId} class=${uniqueId} src="/" tabIndex="-1">`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<img id=${uniqueId} src="/" tabIndex="-1">`
+      document.getElementById(element).innerHTML += `<img id=${uniqueId} class=${uniqueId} src="/" tabIndex="-1">`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -227,10 +251,14 @@ function App() {
   // Paragraph
   const addParagraph = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<p id=${uniqueId} tabIndex="-1">Paragraph</p>`
+      document.getElementById('Page').innerHTML += `<p id=${uniqueId} class=${uniqueId} tabIndex="-1">Paragraph</p>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<p id=${uniqueId} tabIndex="-1">Paragraph</p>`
+      document.getElementById(element).innerHTML += `<p id=${uniqueId} class=${uniqueId} tabIndex="-1">Paragraph</p>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -238,10 +266,14 @@ function App() {
   // Span
   const addSpan = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<span id=${uniqueId} tabIndex="-1">Span</span>`
+      document.getElementById('Page').innerHTML += `<span id=${uniqueId} class=${uniqueId} tabIndex="-1">Span</span>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<span id=${uniqueId} tabIndex="-1">Span</span>`
+      document.getElementById(element).innerHTML += `<span id=${uniqueId} class=${uniqueId} tabIndex="-1">Span</span>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -249,10 +281,14 @@ function App() {
   // H1
   const addHeading1 = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<h1 id=${uniqueId} tabIndex="-1">h1</h1>`
+      document.getElementById('Page').innerHTML += `<h1 id=${uniqueId} class=${uniqueId} tabIndex="-1">h1</h1>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<h1 id=${uniqueId} tabIndex="-1">h1</h1>`
+      document.getElementById(element).innerHTML += `<h1 id=${uniqueId} class=${uniqueId} tabIndex="-1">h1</h1>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -260,10 +296,14 @@ function App() {
   // H2
   const addHeading2 = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<h2 id=${uniqueId} tabIndex="-1">h2</h2>`
+      document.getElementById('Page').innerHTML += `<h2 id=${uniqueId} class=${uniqueId} tabIndex="-1">h2</h2>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<h2 id=${uniqueId} tabIndex="-1">h2</h2>`
+      document.getElementById(element).innerHTML += `<h2 id=${uniqueId} class=${uniqueId} tabIndex="-1">h2</h2>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -271,10 +311,14 @@ function App() {
   // H3
   const addHeading3 = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<h3 id=${uniqueId} tabIndex="-1">h3</h3>`
+      document.getElementById('Page').innerHTML += `<h3 id=${uniqueId} class=${uniqueId} tabIndex="-1">h3</h3>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<h3 id=${uniqueId} tabIndex="-1">h3</h3>`
+      document.getElementById(element).innerHTML += `<h3 id=${uniqueId} class=${uniqueId} tabIndex="-1">h3</h3>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -282,10 +326,14 @@ function App() {
   // H4
   const addHeading4 = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<h4 id=${uniqueId} tabIndex="-1">h4</h4>`
+      document.getElementById('Page').innerHTML += `<h4 id=${uniqueId} class=${uniqueId} tabIndex="-1">h4</h4>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<h4 id=${uniqueId} tabIndex="-1">h4</h4>`
+      document.getElementById(element).innerHTML += `<h4 id=${uniqueId} class=${uniqueId} tabIndex="-1">h4</h4>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -293,10 +341,14 @@ function App() {
   // H5
   const addHeading5 = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<h5 id=${uniqueId} tabIndex="-1">h5</h5>`
+      document.getElementById('Page').innerHTML += `<h5 id=${uniqueId} class=${uniqueId} tabIndex="-1">h5</h5>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<h5 id=${uniqueId} tabIndex="-1">h5</h5>`
+      document.getElementById(element).innerHTML += `<h5 id=${uniqueId} class=${uniqueId} tabIndex="-1">h5</h5>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -304,10 +356,14 @@ function App() {
   // H6
   const addHeading6 = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<h6 id=${uniqueId} tabIndex="-1">h6</h6>`
+      document.getElementById('Page').innerHTML += `<h6 id=${uniqueId} class=${uniqueId} tabIndex="-1">h6</h6>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<h6 id=${uniqueId} tabIndex="-1">h6</h6>`
+      document.getElementById(element).innerHTML += `<h6 id=${uniqueId} class=${uniqueId} tabIndex="-1">h6</h6>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -315,10 +371,14 @@ function App() {
   // Input
   const addInput = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<input type="text" id=${uniqueId} tabIndex="-1"/>`
+      document.getElementById('Page').innerHTML += `<input type="text" id=${uniqueId} class=${uniqueId} tabIndex="-1"/>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<input type="text" id=${uniqueId} tabIndex="-1"/>`
+      document.getElementById(element).innerHTML += `<input type="text" id=${uniqueId} class=${uniqueId} tabIndex="-1"/>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -326,10 +386,14 @@ function App() {
   // Label
   const addLabel = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<label type="text" id=${uniqueId} tabIndex="-1"/>label</label>`
+      document.getElementById('Page').innerHTML += `<label type="text" id=${uniqueId} class=${uniqueId} tabIndex="-1"/>label</label>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<label type="text" id=${uniqueId} tabIndex="-1"/>label</label>`
+      document.getElementById(element).innerHTML += `<label type="text" id=${uniqueId} class=${uniqueId} tabIndex="-1"/>label</label>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -337,10 +401,14 @@ function App() {
   // Un ordered List
   const addUl = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<ul id=${uniqueId} tabIndex="-1"/></ul>`
+      document.getElementById('Page').innerHTML += `<ul id=${uniqueId} class=${uniqueId} tabIndex="-1"/></ul>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<ul id=${uniqueId} tabIndex="-1"/></ul>`
+      document.getElementById(element).innerHTML += `<ul id=${uniqueId} class=${uniqueId} tabIndex="-1"/></ul>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
@@ -348,10 +416,14 @@ function App() {
   // List Item
   const addLi = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<li id=${uniqueId} tabIndex="-1"/>List Item</li>`
+      document.getElementById('Page').innerHTML += `<li id=${uniqueId} class=${uniqueId} tabIndex="-1"/>List Item</li>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<li id=${uniqueId} tabIndex="-1"/>List Item</li>`
+      document.getElementById(element).innerHTML += `<li id=${uniqueId} class=${uniqueId} tabIndex="-1"/>List Item</li>`
+      let newStyleSheet = {'id': uniqueId.toString(), 'class': uniqueId.toString()}
+      styleSheet.push(newStyleSheet)
       uniqueId += 1;
     }
   }
