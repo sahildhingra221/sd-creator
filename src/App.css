@@ -63,16 +63,17 @@
   border: none;
   border-bottom:1px solid lightgrey;
 }
-#Page *:nth-child(2n + 2)::before{
+#Page *:nth-child(even)::before{
     content: '→';
     position: absolute;
-    transform: translateX(-150%);
+    /* transform: translateX(-150%); */
+    transform: translate(-14px, -25px) rotate(90deg);
     background: #619bb3;
     color: #fff;
     padding: 0px 7px;
     border-radius: 10px 0 0 10px;
 }
-#Page *:nth-child(2n + 1)::before{
+#Page *:nth-child(odd)::before{
   content: '→';
   position: absolute;
   transform: translateX(-250%);
@@ -84,4 +85,95 @@
 
 .element-styles textarea{
   width:100%;
+}
+
+.display-code-section{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+}
+
+.show-code-wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-code-container{
+  height: 90%;
+  width: 90%;
+  background: #190505;
+  z-index: 0;
+}
+
+.show-code-header-wrapper{
+  height:10%;
+}
+
+.show-code-header{
+  padding:10px 50px 0;
+}
+
+.show-code-overlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.show-code-tabs .nav-link{
+  background:#000;
+  color: #fff;
+  border-radius:0;
+  padding:10px 50px;
+  border:1px solid #3c1414;
+}
+
+.show-code-tabs .nav-link.active, .show-code-tabs .nav-link:hover{
+  background:#000;
+  color: #fff;
+  border:1px solid orange;
+}
+
+.close-show-code-wrapper{
+  margin-left:auto;
+}
+
+.close-show-code-wrapper button{
+  background: transparent;
+  border: 1px solid gray!important;
+  border-radius: 100px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.show-code-exact .fade{
+  transition:0s;
+}
+
+.show-code-exact {
+  height: 90%;
+}
+
+.show-code-exact .tab-pane{
+  color:#fff;
+  border:0;
+  padding:10px 20px;
+  background:#000;
+  min-height: 100%;
+  margin:0 48px;
+  overflow-x: auto;
 }

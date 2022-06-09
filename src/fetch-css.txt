@@ -1,0 +1,27 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+    
+let Arr = [{id: '1', width: '200px', height: '100px'}, {id: '2', width: '200px', height: '1000px', margin: '0 auto'}]
+
+let styleSheet = "";
+
+// console.log("Welcome to Programiz!");
+for (var i=0;i<Arr.length;i++) {
+    // alert(Arr[i]);
+    styleSheet += "#" + Arr[i].id + " {\n";
+    for (var key in Arr[i]) {
+        console.log("key " + key + " has value " + Arr[i][key]);
+        if(key!="id"){
+            styleSheet += "\t"+key +": "+ Arr[i][key]+";\n"
+        }
+    }
+    styleSheet += "}\n\n";
+            
+}
+
+// for (var key in Arr[1]) {
+//   console.log("key " + key + " has value " + Arr[1][key]);
+// }
+
+console.log(styleSheet)
+// console.log(Arr)

@@ -13,21 +13,138 @@ function App() {
   // SHOW CODE
   const showCode = () => {
     let codeData;
+    
     codeData = document.getElementById('Page').innerHTML;
+    document.getElementById('displayCode').innerHTML = codeData;
+
+    for (let i=1;i<=uniqueId-1;i++){
+      codeData = codeData.replaceAll('id="'+i, 'id="d'+i);
+    }
+
+    document.getElementById('displayCode').innerHTML = codeData;
+
+    for (let i=1;i<=uniqueId-1;i++){
+      document.getElementById('d'+i).removeAttribute('style')
+      document.getElementById('d'+i).removeAttribute('tabindex')
+
+      document.getElementById('d'+i).removeAttribute('id')
+    }
+
+    codeData = document.getElementById('displayCode').innerHTML;
+
+    // Replace gt lt symbols
     codeData = codeData.replaceAll("<", "&lt;");
     codeData = codeData.replaceAll(">", "&gt;");
 
+    // Stylize HTML
+    codeData = codeData.replaceAll("&lt;/div&gt;", "&lt;/div&gt;</br>");
+    // codeData = codeData.replaceAll(";", ";<br><span class='d-inline-block'>&nbsp;&nbsp;&nbsp;&nbsp;</span>");
+    // codeData = codeData.replaceAll("<span class='d-inline-block'>&nbsp;&nbsp;&nbsp;&nbsp;</span>}", "}<br><br>");
+
     // Remove tab index
-    codeData = codeData.replaceAll('tabindex="-1"', "");
+    // codeData = codeData.replaceAll('tabindex="-1"', "");
 
     // style sheet    
+    // codeData = codeData.replaceAll('style="', "style='");
+    // codeData = codeData.replaceAll(';"', ";'");
+
+    // Remove style attribute
     // let styleData = codeData.split('style="').pop().split('"')[0];
     // console.log(styleData)
 
-    // Remove style attribute
-    // codeData = codeData.replaceAll(/style=".*"/, '')
+    // Remove style attribute from single time
+    // codeData = codeData.replace(/style=".*"/, '')
 
     document.getElementById('displayCode').innerHTML = codeData;
+  }
+
+  const showCss = () => {
+    let css = "";
+    for (var i=0;i<styleSheet.length;i++) {
+        css += "#" + styleSheet[i].id + " {";
+        for (var key in styleSheet[i]) {
+            console.log("key " + key + " has value " + styleSheet[i][key]);
+            if(key!="id"){
+                css += key +": "+ styleSheet[i][key]+";"
+            }
+        }
+        css += "}";
+                
+    }
+    console.log(css)
+
+    // Stylize Css
+    css = css.replaceAll("{", "{&nbsp;");
+    css = css.replaceAll(";", ";<br><span class='d-inline-block'>&nbsp;&nbsp;&nbsp;&nbsp;</span>");
+    css = css.replaceAll("<span class='d-inline-block'>&nbsp;&nbsp;&nbsp;&nbsp;</span>}", "}<br><br>");
+
+    // Display Css
+    document.getElementById('displayCode').innerHTML = css;
+  }
+
+  const closeShowCode = () => {
+    document.getElementById('displayCodeSection').style.display="none";
+  }
+
+  const grabCode = () => {
+
+    // Display HTML
+    let codeData;
+    
+    codeData = document.getElementById('Page').innerHTML;
+    document.getElementById('showHtmlCode').innerHTML = codeData;
+
+    for (let i=1;i<=uniqueId-1;i++){
+      codeData = codeData.replaceAll('id="'+i, 'id="d'+i);
+    }
+
+    document.getElementById('showHtmlCode').innerHTML = codeData;
+
+    for (let i=1;i<=uniqueId-1;i++){
+      document.getElementById('d'+i).removeAttribute('style')
+      document.getElementById('d'+i).removeAttribute('tabindex')
+
+      document.getElementById('d'+i).removeAttribute('id')
+    }
+
+    codeData = document.getElementById('showHtmlCode').innerHTML;
+
+    // Replace gt lt symbols
+    codeData = codeData.replaceAll("<", "&lt;");
+    codeData = codeData.replaceAll(">", "&gt;");
+
+    // Stylize HTML
+    codeData = codeData.replaceAll("&lt;/div&gt;", "&lt;/div&gt;</br>");
+
+    // Display HTML
+    document.getElementById('showHtmlCode').innerHTML = codeData;
+
+    // Display Css
+
+    let css = "";
+    for (var i=0;i<styleSheet.length;i++) {
+        css += "." + styleSheet[i].class + " {";
+        for (var key in styleSheet[i]) {
+            if(key!="id" && key!="class"){
+                css += key +": "+ styleSheet[i][key]+";"
+            }
+        }
+        css += "}";
+                
+    }
+    console.log(css)
+
+    // Stylize Css
+    css = css.replaceAll("{", "{&nbsp;");
+    css = css.replaceAll(";", ";<br><span class='d-inline-block'>&nbsp;&nbsp;&nbsp;&nbsp;</span>");
+    css = css.replaceAll("<span class='d-inline-block'>&nbsp;&nbsp;&nbsp;&nbsp;</span>}", "}<br><br>");
+
+    // Display Css
+    document.getElementById('showCssCode').innerHTML = css;
+
+    // Display Section
+    document.getElementById('displayCodeSection').style.display="block";
+
   }
 
   // ELEMENTS
@@ -66,10 +183,10 @@ function App() {
   // BUTTON
   const addButton = () => {
     if(element===''){
-      document.getElementById('Page').innerHTML += `<button id=${uniqueId} tabIndex="-1">Hey</button>`
+      document.getElementById('Page').innerHTML += `<button id=${uniqueId} tabIndex="-1">Button</button>`
       uniqueId += 1;
     } else {
-      document.getElementById(element).innerHTML += `<button id=${uniqueId} tabIndex="-1">Hey</button>`
+      document.getElementById(element).innerHTML += `<button id=${uniqueId} tabIndex="-1">Button</button>`
       uniqueId += 1;
     }
   }
@@ -1144,14 +1261,47 @@ function App() {
     <>
       <div className="container-fluid p-0 top-bar">
         <button onClick={showCode}>View</button>
+        <button onClick={showCss}>View</button>
+        <button onClick={grabCode}>Grab Code</button>
       </div>
-      <div className="show-code-wrapper">
-        <div className="show-code-overlay"></div>
-        <div className="show-code-container">
+      <div id="displayCodeSection" className="display-code-section">
+        <div onClick={closeShowCode} className="show-code-overlay"></div>
+        <div className="show-code-wrapper">
+          <div className="show-code-container">
+            <div className="show-code-header-wrapper">
+              <div className="d-flex align-items-center show-code-header">
+                <div className="show-code-tabs">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Html</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Css</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Preview</button>
+                  </div>
+                </nav>
+                </div>
+                <div className="close-show-code-wrapper">
+                  <button onClick={closeShowCode} class="border-0">&times;</button>
+                </div>
+              </div>
+            </div>
+            <div className="show-code-exact">
+              <div class="tab-content h-100" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <code id="showHtmlCode"></code>
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                  <code id="showCssCode"></code>
+                </div>
+                <div class="tab-pane fade d-flex align-items-center justify-content-center" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                  *Preview - Feature Coming Soon
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
           <code id="displayCode">
 
           </code>
-        </div>
       </div>
       <div className="builder d-flex">
 
