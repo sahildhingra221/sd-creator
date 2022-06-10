@@ -126,7 +126,8 @@ function App() {
         css += "." + styleSheet[i].class + " {";
         for (var key in styleSheet[i]) {
             if(key!="id" && key!="class" && key!="text"){
-                css += key +": "+ styleSheet[i][key]+";"
+                let keyName = key.split(/(?=[A-Z])/).join('-').toLowerCase();
+                css += keyName +": "+ styleSheet[i][key]+";"
             }
         }
         css += "}";
