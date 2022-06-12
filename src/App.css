@@ -21,7 +21,8 @@
 
 #Page{
   width:79%;
-  margin-top:20px
+  margin-top:20px;
+  margin-left:10%;
 }
 
 .element-options, .elements-container, .element-styles{
@@ -32,7 +33,6 @@
   background-color:#f7f7f7;
   display:none;
   padding:10px;
-  display: block;
   height: 90%;
   overflow-x: auto;
   position: fixed;
@@ -44,10 +44,12 @@
 }
 
 .elements-container{
-  height:100vh;
+  height: 90%;
   padding: 0 20px 0 10px;
   background: #fff9f9;
   padding-top: 20px;
+  overflow-x: auto;
+  position: fixed;
 }
 
 .elements-container button{
@@ -196,4 +198,16 @@
   min-height: 100%;
   margin:0 48px;
   overflow-x: auto;
+}
+
+.active{
+  border:none;
+}
+
+.fade{
+  transition:0s;
+}
+
+.tab-content button{
+  width:100%;
 }

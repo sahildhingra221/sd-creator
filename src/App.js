@@ -2,13 +2,18 @@ import './App.css';
 
 import $ from 'jquery';
 
+import React, { useState } from 'react';
+
 function App() {
 
-  let uniqueId = 1
+  // let uniqueId = 1
 
   let element = '';
 
-  let styleSheet = []
+  // let styleSheet = []
+
+  const [styleSheet, setStyleSheet] = useState([])
+  const [uniqueId, setUniqueId] = useState(1)
 
   // SHOW CODE
   const showCode = () => {
@@ -157,14 +162,19 @@ function App() {
       //let pageData = document.getElementById('Page').innerHTML;
       document.getElementById('Page').innerHTML += `<div class="container p${uniqueId}" id=${uniqueId} tabIndex="-1"></div>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      // styleSheet.push(newStyleSheet)
+      //uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
     else{
       document.getElementById(element).innerHTML += `<div class="container p${uniqueId}" id=${uniqueId} tabIndex="-1"></div>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      // styleSheet.push(newStyleSheet)
+      // uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
     }
 
   }
@@ -177,14 +187,16 @@ function App() {
       //let pageData = document.getElementById('Page').innerHTML;
       document.getElementById('Page').innerHTML += `<div id=${uniqueId} class=p${uniqueId} tabIndex="-1"></div>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
     else{
       document.getElementById(element).innerHTML += `<div id=${uniqueId} class=p${uniqueId} tabIndex="-1"></div>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
 
   }
@@ -194,13 +206,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<button id=${uniqueId} class=p${uniqueId} tabIndex="-1">Button</button>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<button id=${uniqueId} class=p${uniqueId} tabIndex="-1">Button</button>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -209,13 +223,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<a href="#" id=${uniqueId} class=p${uniqueId} tabIndex="-1">link to</a>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<a href="#" id=${uniqueId} class=p${uniqueId} tabIndex="-1">link to</a>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -224,13 +240,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<a href="#" id=${uniqueId} class=p${uniqueId} tabIndex="-1">link</a>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<a href="#" id=${uniqueId} class=p${uniqueId} tabIndex="-1">link</a>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -239,13 +257,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<img id=${uniqueId} class=p${uniqueId} src="/" tabIndex="-1">`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<img id=${uniqueId} class=p${uniqueId} src="/" tabIndex="-1">`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -254,13 +274,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<p id=${uniqueId} class=p${uniqueId} tabIndex="-1">Paragraph</p>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<p id=${uniqueId} class=p${uniqueId} tabIndex="-1">Paragraph</p>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -269,13 +291,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<span id=${uniqueId} class=p${uniqueId} tabIndex="-1">Span</span>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<span id=${uniqueId} class=p${uniqueId} tabIndex="-1">Span</span>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -284,13 +308,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<h1 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h1</h1>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<h1 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h1</h1>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -299,13 +325,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<h2 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h2</h2>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<h2 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h2</h2>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -314,13 +342,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<h3 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h3</h3>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<h3 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h3</h3>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -329,13 +359,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<h4 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h4</h4>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<h4 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h4</h4>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -344,13 +376,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<h5 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h5</h5>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<h5 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h5</h5>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -359,13 +393,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<h6 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h6</h6>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<h6 id=${uniqueId} class=p${uniqueId} tabIndex="-1">h6</h6>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -374,13 +410,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<input type="text" id=${uniqueId} class=p${uniqueId} tabIndex="-1"/>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<input type="text" id=${uniqueId} class=p${uniqueId} tabIndex="-1"/>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -389,13 +427,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<label type="text" id=${uniqueId} class=p${uniqueId} tabIndex="-1"/>label</label>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<label type="text" id=${uniqueId} class=p${uniqueId} tabIndex="-1"/>label</label>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -404,13 +444,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<ul id=${uniqueId} class=p${uniqueId} tabIndex="-1"/></ul>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<ul id=${uniqueId} class=p${uniqueId} tabIndex="-1"/></ul>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -419,13 +461,15 @@ function App() {
     if(element===''){
       document.getElementById('Page').innerHTML += `<li id=${uniqueId} class=p${uniqueId} tabIndex="-1"/>List Item</li>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     } else {
       document.getElementById(element).innerHTML += `<li id=${uniqueId} class=p${uniqueId} tabIndex="-1"/>List Item</li>`
       let newStyleSheet = {'id': uniqueId.toString(), 'class': "p"+uniqueId.toString()}
-      styleSheet.push(newStyleSheet)
-      uniqueId += 1;
+      setStyleSheet([...styleSheet, newStyleSheet])
+      setUniqueId(uniqueId + 1)
+      console.log(styleSheet)
     }
   }
 
@@ -433,6 +477,7 @@ function App() {
 
   // SET FOCUS
   const focusedElement = () => {
+    console.log('before ', element)
     try{
       $('#elementStyles').find('input:text, select')
         .each(function () {
@@ -440,19 +485,111 @@ function App() {
         });
       document.getElementById('elementOptions').style.display = "block";
       document.getElementById('elementStyles').style.display = "none";
+      document.getElementById(element).blur()
     } catch{}
     try{
+      document.getElementById(element).blur()
       document.getElementById(element).style.border = "none"
     } catch {}
     element = document.activeElement.id;
+    console.log('after ', element)
     console.log(element)
     document.getElementById(element).style.border = "1px solid";
+    document.getElementById(element).focus()
     let tagName=document.getElementById(element).tagName;
     // console.log(tagName)
     // if(tagName==="DIV" || tagName==="INPUT" || tagName==="LABEL" || tagName==="UL" || tagName==="LI" || tagName==="A"|| tagName==="BUTTON"){
     //   divOptions();
     // }
     divOptions();
+    preFill();
+  }
+
+  // Select from List
+
+  const selectHandle = (elementId) => {
+    try{
+      $('#elementStyles').find('input:text, select')
+        .each(function () {
+            $(this).val('');
+        });
+      document.getElementById('elementOptions').style.display = "block";
+      document.getElementById('elementStyles').style.display = "none";
+      document.getElementById(element).blur()
+    } catch{}
+    try{
+      document.getElementById(element).blur()
+      document.getElementById(element).style.border = "none"
+    } catch {}
+    element = elementId
+    document.getElementById(element).style.border = "1px solid";
+    document.getElementById(element).focus()
+    divOptions();
+    preFill();
+  }
+
+  // REMOVE FOCUS
+  const removeFocus = () => {
+    console.log(styleSheet)
+    try{
+      document.getElementById(element).style.border = "none";
+      element = '';
+    } catch {}
+  }
+  
+  // DELETE ELEMENT
+  const deleteElement = () => {
+    console.log('active', element)
+    
+    document.getElementById(element).remove();
+    element = element.toString()
+    styleSheet.find((k, i) => {
+      if (k.id == element) {
+        console.log('deleting... ', element)
+        styleSheet.splice(i, 1)
+        setStyleSheet([...styleSheet])
+      }
+    });
+    console.log('del ', styleSheet)
+    element = '';
+  }
+
+  // DUPLICATE ELEMENT
+  const duplicateElement = () => {
+    var currentElement = document.getElementById(element)
+    var duplicateElement = currentElement.cloneNode(true);
+    duplicateElement.id = uniqueId;
+    // currentElement.parentNode.appendChild(duplicateElement);
+    // currentElement.nextSibling.appendChild(duplicateElement);
+    // currentElement.insertAdjacentHTML("afterend", "Yo was it");
+    currentElement.parentNode.insertBefore(duplicateElement, currentElement);
+    document.getElementById(uniqueId).style.border = "none";
+    uniqueId += 1;
+  }
+
+  // Move Up ELEMENT
+  const moveUpElement = () => {
+    var currentElement = document.getElementById(element)
+    var upperElement = currentElement.previousElementSibling.id;
+    console.log(currentElement, upperElement)
+    // currentElement.parentNode.appendChild(duplicateElement);
+    // currentElement.nextSibling.appendChild(duplicateElement);
+    // currentElement.insertAdjacentHTML("afterend", "Yo was it");
+    var id = "page"
+    document.getElementById(upperElement).insertBefore(currentElement);
+  }
+
+
+  // Element Options
+
+  const divOptions = () => {
+    document.getElementById('elementOptions').style.display = "none";
+    document.getElementById('elementStyles').style.display = "block";
+  }
+
+  // Pre fill element styles
+
+  const preFill = () => {
     let checkExist = styleSheet.find(k => k.id === element);
     if(checkExist){
       styleSheet.find((k, i) => {
@@ -520,58 +657,11 @@ function App() {
     }
   }
 
-  // REMOVE FOCUS
-  const removeFocus = () => {
-    console.log(styleSheet)
-    try{
-      document.getElementById(element).style.border = "none";
-      element = '';
-    } catch {}
-  }
-  
-  // DELETE ELEMENT
-  const deleteElement = () => {
-    document.getElementById(element).remove();
-    element = '';
-  }
-
-  // DUPLICATE ELEMENT
-  const duplicateElement = () => {
-    var currentElement = document.getElementById(element)
-    var duplicateElement = currentElement.cloneNode(true);
-    duplicateElement.id = uniqueId;
-    // currentElement.parentNode.appendChild(duplicateElement);
-    // currentElement.nextSibling.appendChild(duplicateElement);
-    // currentElement.insertAdjacentHTML("afterend", "Yo was it");
-    currentElement.parentNode.insertBefore(duplicateElement, currentElement);
-    document.getElementById(uniqueId).style.border = "none";
-    uniqueId += 1;
-  }
-
-  // Move Up ELEMENT
-  const moveUpElement = () => {
-    var currentElement = document.getElementById(element)
-    var upperElement = currentElement.previousElementSibling.id;
-    console.log(currentElement, upperElement)
-    // currentElement.parentNode.appendChild(duplicateElement);
-    // currentElement.nextSibling.appendChild(duplicateElement);
-    // currentElement.insertAdjacentHTML("afterend", "Yo was it");
-    var id = "page"
-    document.getElementById(upperElement).insertBefore(currentElement);
-  }
-
-
-  // Element Options
-
-  const divOptions = () => {
-    document.getElementById('elementOptions').style.display = "none";
-    document.getElementById('elementStyles').style.display = "block";
-  }
-
   // STYLES
 
   const showActiveElement = () => {
     document.getElementById("demo").innerHTML = element;
+    console.log(styleSheet)
   }
 
   // Width
@@ -1378,28 +1468,49 @@ function App() {
       </div>
       <div className="builder d-flex">
 
+        
+
         <div className="elements-container">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-elements-tab" data-bs-toggle="tab" data-bs-target="#nav-elements" type="button" role="tab" aria-controls="nav-elements" aria-selected="true">Elements</button>
+              <button class="nav-link" id="nav-elements-list-tab" data-bs-toggle="tab" data-bs-target="#nav-elements-list" type="button" role="tab" aria-controls="nav-elements-list" aria-selected="false">List</button>
+              <button class="nav-link d-none" id="nav-extra-tab" data-bs-toggle="tab" data-bs-target="#nav-extra" type="button" role="tab" aria-controls="nav-extra" aria-selected="false">*extra</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-elements" role="tabpanel" aria-labelledby="nav-elements-tab">
+              <button onClick={addContainer}>Container</button>
+              <button onClick={addDiv}>Div</button>
+              <button onClick={addButton}>Button</button>
+              <button onClick={addAnchor}>A(link)</button>
+              <button onClick={addAnchorTag}>anchor</button>
+              <button onClick={addImg}>Image</button>
+              <button onClick={addParagraph}>P</button>
+              <button onClick={addSpan}>Span</button>
+              <button onClick={addHeading1}>H1</button>
+              <button onClick={addHeading2}>H2</button>
+              <button onClick={addHeading3}>H3</button>
+              <button onClick={addHeading4}>H4</button>
+              <button onClick={addHeading5}>H5</button>
+              <button onClick={addHeading6}>H6</button>
+              <button onClick={addInput}>Input</button>
+              <button onClick={addLabel}>Label</button>
+              <button onClick={addUl}>UL</button>
+              <button onClick={addLi}>LI</button>
 
-          <button onClick={addContainer}>Container</button>
-          <button onClick={addDiv}>Div</button>
-          <button onClick={addButton}>Button</button>
-          <button onClick={addAnchor}>A(link)</button>
-          <button onClick={addAnchorTag}>anchor</button>
-          <button onClick={addImg}>Image</button>
-          <button onClick={addParagraph}>P</button>
-          <button onClick={addSpan}>Span</button>
-          <button onClick={addHeading1}>H1</button>
-          <button onClick={addHeading2}>H2</button>
-          <button onClick={addHeading3}>H3</button>
-          <button onClick={addHeading4}>H4</button>
-          <button onClick={addHeading5}>H5</button>
-          <button onClick={addHeading6}>H6</button>
-          <button onClick={addInput}>Input</button>
-          <button onClick={addLabel}>Label</button>
-          <button onClick={addUl}>UL</button>
-          <button onClick={addLi}>LI</button>
-
-          <button onClick={removeFocus}>Remove Focus</button>
+              <button onClick={removeFocus}>Remove Focus</button>
+            </div>
+            <div class="tab-pane fade" id="nav-elements-list" role="tabpanel" aria-labelledby="nav-elements-list-tab">
+              {styleSheet===''?'add elements first!':
+                styleSheet.map((element) => {
+                  return <button key={element.id} onClick={() => selectHandle(element.id)} class="d-block">#{element.id}</button>
+                })
+              }
+            </div>
+            <div class="tab-pane fade" id="nav-extra" role="tabpanel" aria-labelledby="nav-extra-tab">...</div>
+          </div>
+          
 
         </div>
 
