@@ -596,7 +596,7 @@ function App() {
         if (k.id === element) {
           try{
 
-            if(styleSheet[i].classes !== undefined) {
+            if(styleSheet[i].class !== undefined) {
               document.getElementById('elementClasses').value = styleSheet[i].class;
             } else {
               document.getElementById('elementClasses').value = ''
@@ -619,9 +619,33 @@ function App() {
             } else {
               document.getElementById('elementHeight').value = ''
             }
+
+            if(styleSheet[i].fontSize !== undefined) {
+              document.getElementById('elementFontSize').value = styleSheet[i].fontSize;
+            } else {
+              document.getElementById('elementFontSize').value = ''
+            }
+
+            if(styleSheet[i].fontWeight !== undefined) {
+              document.getElementById('elementFontWeight').value = styleSheet[i].fontWeight;
+            } else {
+              document.getElementById('elementFontWeight').value = ''
+            }
+
+            if(styleSheet[i].lineHeight !== undefined) {
+              document.getElementById('elementLineHeight').value = styleSheet[i].lineHeight;
+            } else {
+              document.getElementById('elementLineHeight').value = ''
+            }
             
+            if(styleSheet[i].padding !== undefined) {
+              document.getElementById('elementPadding').value = styleSheet[i].padding
+            } else{
+              document.getElementById('elementPadding').value = ''
+            }
+
             if(styleSheet[i].paddingTop !== undefined) {
-              document.getElementById('elementPaddingTop').value = 'styleSheet[i].paddingTop'
+              document.getElementById('elementPaddingTop').value = styleSheet[i].paddingTop
             } else{
               document.getElementById('elementPaddingTop').value = ''
             }
@@ -644,13 +668,102 @@ function App() {
               document.getElementById('elementPaddingRight').value = ''
             }
 
+            if(styleSheet[i].margin !== undefined) {
+              document.getElementById('elementMargin').value = styleSheet[i].margin
+            } else{
+              document.getElementById('elementMargin').value = ''
+            }
+
+            if(styleSheet[i].marginTop !== undefined) {
+              document.getElementById('elementMarginTop').value = styleSheet[i].marginTop
+            } else{
+              document.getElementById('elementMarginTop').value = ''
+            }
+
+            if(styleSheet[i].marginBottom !== undefined) {
+              document.getElementById('elementMarginBottom').value = styleSheet[i].marginBottom;
+            } else{
+              document.getElementById('elementMarginBottom').value = ''
+            }
+
+            if(styleSheet[i].marginLeft !== undefined) {
+              document.getElementById('elementMarginLeft').value = styleSheet[i].marginLeft;
+            } else {
+              document.getElementById('elementMarginLeft').value = ''
+            }
+            
+            if(styleSheet[i].marginRight !== undefined) {
+              document.getElementById('elementMarginRight').value = styleSheet[i].marginRight;
+            } else{
+              document.getElementById('elementMarginRight').value = ''
+            }
+
             if(styleSheet[i].display !== undefined) {
               document.getElementById('elementDisplay').value = styleSheet[i].display;
             } else {
               document.getElementById('elementDisplay').value = ''
             }
+
+            if(styleSheet[i].display !== undefined) {
+              document.getElementById('elementDisplay').value = styleSheet[i].display;
+            } else {
+              document.getElementById('elementDisplay').value = ''
+            }
+
+            if(styleSheet[i].textAlign !== undefined) {
+              document.getElementById('elementTextAlign').value = styleSheet[i].textAlign;
+            } else {
+              document.getElementById('elementTextAlign').value = ''
+            }
             
+            if(styleSheet[i].overflow !== undefined) {
+              document.getElementById('elementOverflow').value = styleSheet[i].overflow;
+            } else {
+              document.getElementById('elementOverflow').value = ''
+            }
+
+            if(styleSheet[i].textDecoration !== undefined) {
+              document.getElementById('elementTextDecoration').value = styleSheet[i].textDecoration;
+            } else {
+              document.getElementById('elementTextDecoration').value = ''
+            }
             
+            if(styleSheet[i].flexDirection !== undefined) {
+              document.getElementById('elementFlexDirection').value = styleSheet[i].flexDirection;
+            } else {
+              document.getElementById('elementFlexDirection').value = ''
+            }
+
+            if(styleSheet[i].alignItem !== undefined) {
+              document.getElementById('elementAlignItem').value = styleSheet[i].alignItem;
+            } else {
+              document.getElementById('elementAlignItem').value = ''
+            }
+
+            if(styleSheet[i].justifyContent !== undefined) {
+              document.getElementById('elementJustifyContent').value = styleSheet[i].justifyContent;
+            } else {
+              document.getElementById('elementJustifyContent').value = ''
+            }
+
+            if(styleSheet[i].position !== undefined) {
+              document.getElementById('elementPosition').value = styleSheet[i].position;
+            } else {
+              document.getElementById('elementPosition').value = ''
+            }
+
+            if(styleSheet[i].boxShadow !== undefined) {
+              document.getElementById('elementShadow').value = styleSheet[i].boxShadow;
+            } else {
+              document.getElementById('elementShadow').value = ''
+            }
+
+            if(styleSheet[i].borderRadius !== undefined) {
+              document.getElementById('elementBorderRadius').value = styleSheet[i].borderRadius;
+            } else {
+              document.getElementById('elementBorderRadius').value = ''
+            }
+
           } catch {}
         }
       });
@@ -797,6 +910,45 @@ function App() {
     console.log(styleSheet)
   }
 
+  // Text Align
+
+  const handleTextAlign = (e) =>{
+    document.getElementById(element).style.textAlign = e.target.value;
+    let checkExist = styleSheet.find(k => k.id === element);
+    if(checkExist){
+      styleSheet.find((k, i) => {
+        if (k.id === element) {
+            styleSheet[i].textAlign = e.target.value;
+        }
+      });
+    }
+    else{
+      let newStyleSheet = {'id': element, textAlign: e.target.value}
+      styleSheet.push(newStyleSheet)
+    }
+    console.log(styleSheet)
+  }
+
+
+    // Overflow
+
+  const handleOverflow = (e) =>{
+    document.getElementById(element).style.overflow = e.target.value;
+    let checkExist = styleSheet.find(k => k.id === element);
+    if(checkExist){
+      styleSheet.find((k, i) => {
+        if (k.id === element) {
+            styleSheet[i].overflow = e.target.value;
+        }
+      });
+    }
+    else{
+      let newStyleSheet = {'id': element, overflow: e.target.value}
+      styleSheet.push(newStyleSheet)
+    }
+    console.log(styleSheet)
+  }
+
   // Font Tect Decoration
 
   const handleTextDecoration = (e) =>{
@@ -854,18 +1006,18 @@ function App() {
       console.log(styleSheet)
     }
 
-    const handleAlignItems = (e) =>{
-      document.getElementById(element).style.alignItems = e.target.value;
+    const handleAlignItem = (e) =>{
+      document.getElementById(element).style.alignItem = e.target.value;
       let checkExist = styleSheet.find(k => k.id === element);
       if(checkExist){
         styleSheet.find((k, i) => {
           if (k.id === element) {
-              styleSheet[i].alignItems = e.target.value;
+              styleSheet[i].alignItem = e.target.value;
           }
         });
       }
       else{
-        let newStyleSheet = {'id': element, alignItems: e.target.value}
+        let newStyleSheet = {'id': element, alignItem: e.target.value}
         styleSheet.push(newStyleSheet)
       }
       console.log(styleSheet)
@@ -1540,7 +1692,23 @@ function App() {
             <input id="elementFontWeight" type="text" onChange={handleFontWeight} placeholder="font weight"/>
             
             <label>Line Height</label><br/>
-            <input id="elementLineHeight" type="text" onChange={handleLineHeight} placeholder="font weight"/>
+            <input id="elementLineHeight" type="text" onChange={handleLineHeight} placeholder="line height"/>
+
+            <label>Text Align</label><br/>
+            <select id="elementTextAlign" onChange={handleTextAlign}>
+              <option value="none">none</option>
+              <option value="center">center</option>
+              <option value="left">left</option>
+              <option value="right">right</option>
+            </select>
+
+            <label>Overflow</label><br/>
+            <select id="elementOverflow" onChange={handleOverflow}>
+              <option value="none">none</option>
+              <option value="hidden">hidden</option>
+              <option value="scroll">scroll</option>
+              <option value="visible">visible</option>
+            </select>
 
             <label>Text Decoration</label><br/>
             <select id="elementTextDecoration" onChange={handleTextDecoration}>
@@ -1571,7 +1739,7 @@ function App() {
             </select>
 
             <label>Align Item</label><br/>
-            <select id="elementAlignItems" onChange={handleAlignItems}>
+            <select id="elementAlignItem" onChange={handleAlignItem}>
               <option value="none" selected disabled hidden>Display</option>
               <option value="initial">Align Items</option>
               <option value="center">Center</option>
